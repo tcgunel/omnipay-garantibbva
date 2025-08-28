@@ -152,7 +152,7 @@ class EnrolmentRequest extends AbstractRequest
     }
 
     public function sendData($data)
-    {info('data', $data);
+    {
         return $this->createResponse($data);
     }
 
