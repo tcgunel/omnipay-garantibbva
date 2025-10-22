@@ -2,6 +2,8 @@
 
 namespace Omnipay\Garantibbva\Traits;
 
+use Omnipay\Garantibbva\Helpers\Helper;
+
 trait PurchaseGettersSetters
 {
     public function getTerminalMerchantId()
@@ -96,11 +98,13 @@ trait PurchaseGettersSetters
 
     public function getClientIp()
     {
-        return $this->getParameter('client_ip');
+        return Helper::getIPv4OrFallback($this->getParameter('client_ip'));
     }
 
     public function setClientIp($value)
     {
+        $value = Helper::getIPv4OrFallback($value);
+
         return $this->setParameter('client_ip', $value);
     }
 

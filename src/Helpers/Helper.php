@@ -7,6 +7,50 @@ use Symfony\Component\Serializer\Encoder\XmlEncoder;
 
 class Helper
 {
+    public static function getIPv4OrFallback(string $ip): string
+    {
+        // 1️⃣ If it's already IPv4, return it directly
+        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+            return $ip;
+        }
+
+        // 2️⃣ If it's IPv6, check Cloudflare and proxy headers for IPv4
+        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+            $headers = [
+                'HTTP_CF_CONNECTING_IP', // Cloudflare’s real client IP
+                'HTTP_CF_REAL_IP',
+                'HTTP_X_FORWARDED_FOR',
+                'HTTP_CLIENT_IP',
+                'HTTP_X_REAL_IP',
+                'HTTP_X_FORWARDED',
+                'HTTP_FORWARDED_FOR',
+                'HTTP_FORWARDED'
+            ];
+
+            foreach ($headers as $header) {
+                if (!empty($_SERVER[$header])) {
+                    // Cloudflare and proxies may send multiple comma-separated IPs
+                    $ips = explode(',', $_SERVER[$header]);
+                    foreach ($ips as $candidate) {
+                        $candidate = trim($candidate);
+                        if (filter_var($candidate, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+                            return $candidate;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 3️⃣ Fallback: use the server’s own IPv4 address
+        $serverIp = $_SERVER['SERVER_ADDR'] ?? gethostbyname(gethostname());
+        if (filter_var($serverIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+            return $serverIp;
+        }
+
+        // 4️⃣ Final fallback: localhost
+        return '127.0.0.1';
+    }
+
     public static function flattenArray(array $array): array
     {
         $result = [];
