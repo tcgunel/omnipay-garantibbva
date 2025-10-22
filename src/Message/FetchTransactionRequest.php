@@ -14,7 +14,7 @@ class FetchTransactionRequest extends AbstractRequest
 
     protected $test_endpoint = 'https://sanalposprovtest.garantibbva.com.tr/VPServlet';
 
-    protected $prod_endpoint = 'https://sanalposprov.garantibbva.com.tr/VPServlet';
+    protected $prod_endpoint = 'https://sanalposprov.garanti.com.tr/VPServlet';
 
     /**
      * @throws InvalidRequestException
