@@ -35,6 +35,7 @@
         "php": "^7.4|^8.0",
         "league/omnipay": "^3",
         "ext-json": "*",
+        "ext-mbstring": "*",
         "ext-simplexml": "*",
         "ext-dom": "*",
         "symfony/serializer": "^7.3"

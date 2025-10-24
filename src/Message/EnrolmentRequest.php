@@ -123,7 +123,7 @@ class EnrolmentRequest extends AbstractRequest
             $data["orderproductcode{$index}"] = $item->getDescription();
             $data["orderquantity{$index}"] = $item->getQuantity();
             $data["ordertotalamount{$index}"] = ($item->getPrice() * 100) * $item->getQuantity();
-            $data["orderdescription{$index}"] = substr($item->getName(), 0, 20);
+            $data["orderdescription{$index}"] = mb_substr($item->getName(), 0, 20, 'UTF-8');
 
         }
 
