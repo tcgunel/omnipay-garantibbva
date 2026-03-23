@@ -6,7 +6,7 @@
   "store_key": "testStoreKey456",
   "api_version": 512,
   "installment": 3,
-  "secure_3d_security_level": "3D_PAY",
+  "secure3DSecurityLevel": "3D_PAY",
   "lang": "tr",
   "company_name": "Test Company",
   "transactionId": "TEST-ORDER-001",

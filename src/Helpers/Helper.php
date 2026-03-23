@@ -24,7 +24,7 @@ class Helper
                 'HTTP_X_REAL_IP',
                 'HTTP_X_FORWARDED',
                 'HTTP_FORWARDED_FOR',
-                'HTTP_FORWARDED'
+                'HTTP_FORWARDED',
             ];
 
             foreach ($headers as $header) {
@@ -109,6 +109,6 @@ class Helper
     {
         $encoder = new XmlEncoder();
         $xml = $encoder->decode($data, 'xml');
-        return (object)json_decode(json_encode($xml, JSON_THROW_ON_ERROR), false, 512, JSON_THROW_ON_ERROR);
+        return (object) json_decode(json_encode($xml, JSON_THROW_ON_ERROR), false, 512, JSON_THROW_ON_ERROR);
     }
 }

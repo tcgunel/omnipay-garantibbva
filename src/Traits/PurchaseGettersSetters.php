@@ -150,11 +150,11 @@ trait PurchaseGettersSetters
 
     public function getSecure3DSecurityLevel()
     {
-        return $this->getParameter('secure_3d_security_level');
+        return $this->getParameter('secure3DSecurityLevel');
     }
 
     public function setSecure3DSecurityLevel($value)
     {
-        return $this->setParameter('secure_3d_security_level', $value);
+        return $this->setParameter('secure3DSecurityLevel', $value);
     }
 }

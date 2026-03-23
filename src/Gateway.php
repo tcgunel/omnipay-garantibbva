@@ -28,13 +28,12 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
-            'clientIp'                 => '127.0.0.1',
-            'secure'                   => false,
-            'api_version'              => 512,
-            'lang'                     => 'tr',
-            'terminal_user_id'         => 'GARANTI',
-            'installment'              => 1,
-            'secure_3d_security_level' => Secure3DSecurityLevel::PAY,
+            'secure' => false,
+            'api_version' => 512,
+            'lang' => 'tr',
+            'terminal_user_id' => 'GARANTI',
+            'installment' => 1,
+            'secure3DSecurityLevel' => Secure3DSecurityLevel::PAY,
         ];
     }
 

@@ -1,9 +1,10 @@
 <?php
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
+use Omnipay\Common\CreditCard;
 use Omnipay\Common\ItemBag;
 use Omnipay\Garantibbva\Constants\Secure3DSecurityLevel;
-use Omnipay\Common\CreditCard;
 use Omnipay\Garantibbva\Message\EnrolmentRequest;
 use Omnipay\Garantibbva\Message\EnrolmentResponse;
 use Omnipay\Omnipay;
@@ -64,16 +65,16 @@ $creditCard = (new CreditCard())
 
 $item_bag = new ItemBag();
 $item_bag->add([
-    'name'        => 'Item 1',
+    'name' => 'Item 1',
     'description' => uniqid(),
-    'quantity'    => 1,
-    'price'       => '1000.00',
+    'quantity' => 1,
+    'price' => '1000.00',
 ]);
 $item_bag->add([
-    'name'        => 'Item 2',
+    'name' => 'Item 2',
     'description' => uniqid(),
-    'quantity'    => 2,
-    'price'       => '1100.00',
+    'quantity' => 2,
+    'price' => '1100.00',
 ]);
 
 /** @var EnrolmentRequest $enrollment */

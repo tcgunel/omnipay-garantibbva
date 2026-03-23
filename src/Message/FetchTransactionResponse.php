@@ -37,7 +37,7 @@ class FetchTransactionResponse extends AbstractResponse
         return implode('', [
             $this->response->Order?->OrderInqResult?->SysErrMsg,
             isset($this->response->Transaction?->Response?->ResultDetail) ? $this->response->Transaction?->Response?->ResultDetail?->ErrorMsg : $this->response->Transaction?->Response?->ErrorMsg,
-            isset($this->response->Transaction?->Response?->ResultDetail) ? $this->response->Transaction?->Response?->ResultDetail?->SysErrMsg :  $this->response->Transaction?->Response?->SysErrMsg,
+            isset($this->response->Transaction?->Response?->ResultDetail) ? $this->response->Transaction?->Response?->ResultDetail?->SysErrMsg : $this->response->Transaction?->Response?->SysErrMsg,
         ]);
     }
 

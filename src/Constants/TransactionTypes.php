@@ -8,8 +8,8 @@ class TransactionTypes
     public const VOID = 'void';
     public const REFUND = 'refund';
     public const PREAUTH = 'preauth'; // Tekrarlı satış işlem tipinde value değeri.
-                                      // Bonus kullanımında işlem tipinde value değeri.
-                                      // Ön otorizasyon işlem tipinde value değeri.
+    // Bonus kullanımında işlem tipinde value değeri.
+    // Ön otorizasyon işlem tipinde value değeri.
     public const POSTAUTH = 'postauth';
     public const PARTIALVOID = 'partialvoid';
     public const ORDERINQ = 'orderinq';

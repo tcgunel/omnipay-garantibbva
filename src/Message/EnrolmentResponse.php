@@ -43,7 +43,7 @@ class EnrolmentResponse extends AbstractResponse implements RedirectResponseInte
     {
         $response = parent::getRedirectResponse();
 
-        $response->setContent(str_replace("<body", "<body style='color:#FFF'", $response->getContent()));
+        $response->setContent(str_replace('<body', "<body style='color:#FFF'", $response->getContent()));
 
         $script = '<script>
 			document.forms[0].style.display = "none";
@@ -56,9 +56,9 @@ class EnrolmentResponse extends AbstractResponse implements RedirectResponseInte
 			}, 5000);
 		</script>';
 
-        $response->setContent(str_replace("</body>", "$script</body>", $response->getContent()));
+        $response->setContent(str_replace('</body>', "$script</body>", $response->getContent()));
 
-        $response->setContent(str_replace("</body>", $this->redirectSpinner() . "</body>", $response->getContent()));
+        $response->setContent(str_replace('</body>', $this->redirectSpinner() . '</body>', $response->getContent()));
 
         return $response;
     }

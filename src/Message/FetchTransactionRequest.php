@@ -34,35 +34,35 @@ class FetchTransactionRequest extends AbstractRequest
         );
 
         return [
-            'Mode'        => $this->getTestMode() ? 'TEST' : 'PROD',
-            'Version'     => $this->getApiVersion(),
-            'Terminal'    => [
+            'Mode' => $this->getTestMode() ? 'TEST' : 'PROD',
+            'Version' => $this->getApiVersion(),
+            'Terminal' => [
                 'ProvUserID' => 'PROVAUT',
-                'UserID'     => $this->getTerminalUserId(),
-                'HashData'   => $this->hash(),
-                'ID'         => $this->getTerminalId(),
+                'UserID' => $this->getTerminalUserId(),
+                'HashData' => $this->hash(),
+                'ID' => $this->getTerminalId(),
                 'MerchantID' => $this->getTerminalMerchantId(),
             ],
-            'Customer'    => [
-                'IPAddress'    =>  $this->getClientIp(),
-                'EmailAddress' =>  $this->getCard()->getEmail(),
+            'Customer' => [
+                'IPAddress' => $this->getClientIp(),
+                'EmailAddress' => $this->getCard()->getEmail(),
             ],/*
             'Card'        => [
                 'Number'     => $request->creditCard->cardNumber,
                 'ExpireDate' => $request->creditCard->GetExpireInfo(),
                 'CVV2'       => $request->creditCard->cvv,
             ],*/
-            'Order'       => [
-                'OrderID'     => $this->getTransactionId(),
-                'GroupID'     => ''
+            'Order' => [
+                'OrderID' => $this->getTransactionId(),
+                'GroupID' => '',
             ],
             'Transaction' => [
-                'Type'                  => TransactionTypes::ORDERINQ,
-                'ListPageNum'           => 1,
-                'Amount'                => $this->getAmountInteger(),
-                'CurrencyCode'          => $this->getCurrencyNumeric(),
+                'Type' => TransactionTypes::ORDERINQ,
+                'ListPageNum' => 1,
+                'Amount' => $this->getAmountInteger(),
+                'CurrencyCode' => $this->getCurrencyNumeric(),
                 'CardholderPresentCode' => $this->getSecure() ? '13' : '0',
-                'MotoInd'               => 'N'
+                'MotoInd' => 'N',
             ],
         ];
     }
@@ -71,14 +71,14 @@ class FetchTransactionRequest extends AbstractRequest
     {
         $hashPasswordData = [
             $this->getProvUserPassword(),
-            str_pad((int)$this->getTerminalId(), 9, 0, STR_PAD_LEFT)
+            str_pad((int) $this->getTerminalId(), 9, 0, STR_PAD_LEFT),
         ];
 
         $hashedPassword = strtoupper(sha1(implode('', $hashPasswordData)));
 
         $hashedDataArr = [
             $this->getTransactionId(), $this->getTerminalId(), $this->getCard()->getNumber(),
-            $this->getAmountInteger(), $this->getCurrencyNumeric(), $hashedPassword
+            $this->getAmountInteger(), $this->getCurrencyNumeric(), $hashedPassword,
         ];
 
         return strtoupper(hash('sha512', implode('', $hashedDataArr)));
@@ -96,7 +96,7 @@ class FetchTransactionRequest extends AbstractRequest
             $this->getTestMode() ? $this->test_endpoint : $this->prod_endpoint,
             [
                 'Content-Type' => 'application/x-www-form-urlencoded',
-                'Accept'       => 'application/xml',
+                'Accept' => 'application/xml',
             ],
             $this->prepareXml($data)
         );
