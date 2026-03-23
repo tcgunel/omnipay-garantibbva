@@ -157,4 +157,14 @@ trait PurchaseGettersSetters
     {
         return $this->setParameter('secure3DSecurityLevel', $value);
     }
+
+    public function getRefundUserPassword()
+    {
+        return $this->getParameter('refund_user_password');
+    }
+
+    public function setRefundUserPassword($value)
+    {
+        return $this->setParameter('refund_user_password', $value);
+    }
 }
