@@ -1,0 +1,42 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 650
+
+<?xml version="1.0" encoding="UTF-8"?>
+<GVPSResponse>
+    <Mode>TEST</Mode>
+    <Order>
+        <OrderID>TEST-ORDER-001</OrderID>
+        <GroupID></GroupID>
+        <OrderInqResult>
+            <Code>99</Code>
+            <Status>DECLINED</Status>
+            <SysErrMsg>Order not found</SysErrMsg>
+        </OrderInqResult>
+    </Order>
+    <Transaction>
+        <Response>
+            <Source>HOST</Source>
+            <Code>99</Code>
+            <ReasonCode>99</ReasonCode>
+            <Message>Declined</Message>
+            <ErrorMsg>Order does not exist</ErrorMsg>
+            <SysErrMsg>System error: record not found</SysErrMsg>
+        </Response>
+        <RetrefNum></RetrefNum>
+        <AuthCode></AuthCode>
+        <BatchNum></BatchNum>
+        <SequenceNum></SequenceNum>
+        <ProvDate></ProvDate>
+        <CardNumberMasked></CardNumberMasked>
+        <CardHolderName></CardHolderName>
+        <CardType></CardType>
+        <HashData></HashData>
+        <HostMsgList/>
+        <RewardInqResult>
+            <RewardList/>
+            <ChequeList/>
+        </RewardInqResult>
+    </Transaction>
+</GVPSResponse>

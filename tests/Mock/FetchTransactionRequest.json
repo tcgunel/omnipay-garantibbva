@@ -1,0 +1,22 @@
+{
+  "terminal_merchant_id": "7000679",
+  "terminal_id": "30691298",
+  "terminal_user_id": "GARANTI",
+  "prov_user_password": "testPassword123",
+  "api_version": 512,
+  "secure": false,
+  "transactionId": "TEST-ORDER-001",
+  "amount": 12.34,
+  "currency": "TRY",
+  "testMode": true,
+  "client_ip": "127.0.0.1",
+  "card": {
+    "firstName": "Example",
+    "lastName": "User",
+    "number": "4111111111111111",
+    "expiryMonth": "12",
+    "expiryYear": "2099",
+    "cvv": "000",
+    "email": "test@example.com"
+  }
+}

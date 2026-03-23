@@ -1,0 +1,42 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 850
+
+<?xml version="1.0" encoding="UTF-8"?>
+<GVPSResponse>
+    <Mode>TEST</Mode>
+    <Order>
+        <OrderID>TEST-ORDER-001</OrderID>
+        <GroupID></GroupID>
+        <OrderInqResult>
+            <Code>00</Code>
+            <Status>APPROVED</Status>
+            <SysErrMsg></SysErrMsg>
+        </OrderInqResult>
+    </Order>
+    <Transaction>
+        <Response>
+            <Source>HOST</Source>
+            <Code>00</Code>
+            <ReasonCode>00</ReasonCode>
+            <Message>Approved</Message>
+            <ErrorMsg></ErrorMsg>
+            <SysErrMsg></SysErrMsg>
+        </Response>
+        <RetrefNum>335709614892</RetrefNum>
+        <AuthCode>304919</AuthCode>
+        <BatchNum>003962</BatchNum>
+        <SequenceNum>000033</SequenceNum>
+        <ProvDate>20260322 15:30:45</ProvDate>
+        <CardNumberMasked>411111******1111</CardNumberMasked>
+        <CardHolderName>Example User</CardHolderName>
+        <CardType>VISA</CardType>
+        <HashData>ABC123DEF456</HashData>
+        <HostMsgList/>
+        <RewardInqResult>
+            <RewardList/>
+            <ChequeList/>
+        </RewardInqResult>
+    </Transaction>
+</GVPSResponse>

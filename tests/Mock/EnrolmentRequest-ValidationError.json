@@ -1,0 +1,49 @@
+{
+  "terminal_merchant_id": "7000679",
+  "terminal_id": "30691298",
+  "terminal_user_id": "GARANTI",
+  "prov_user_password": "testPassword123",
+  "store_key": "testStoreKey456",
+  "api_version": 512,
+  "installment": 1,
+  "secure_3d_security_level": "3D_PAY",
+  "lang": "tr",
+  "transactionId": "TEST-ORDER-001",
+  "amount": null,
+  "currency": "TRY",
+  "testMode": true,
+  "client_ip": "127.0.0.1",
+  "returnUrl": "https://example.com/success",
+  "cancelUrl": "https://example.com/failure",
+  "card": {
+    "firstName": "Example",
+    "lastName": "User",
+    "number": "4111111111111111",
+    "expiryMonth": "12",
+    "expiryYear": "2099",
+    "cvv": "000",
+    "email": "test@example.com",
+    "billingAddress1": "123 Billing St",
+    "billingAddress2": "Billsville",
+    "billingCity": "Istanbul",
+    "billingPostcode": "34000",
+    "billingState": "IST",
+    "billingCountry": "TR",
+    "billingPhone": "5554443322",
+    "shippingAddress1": "456 Shipping St",
+    "shippingAddress2": "Shipsville",
+    "shippingCity": "Ankara",
+    "shippingPostcode": "06000",
+    "shippingState": "ANK",
+    "shippingCountry": "TR",
+    "shippingPhone": "5559998877"
+  },
+  "items": [
+    {
+      "name": "Test Product",
+      "description": "PROD001",
+      "quantity": 1,
+      "price": 12.34
+    }
+  ]
+}
