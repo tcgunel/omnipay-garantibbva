@@ -31,6 +31,7 @@ class RefundRequest extends AbstractRequest
             'transactionId',
             'testMode',
             'client_ip',
+            'card',
         );
 
         return [
@@ -45,15 +46,20 @@ class RefundRequest extends AbstractRequest
             ],
             'Customer' => [
                 'IPAddress' => $this->getClientIp(),
-                'EmailAddress' => $this->getCard()?->getEmail() ?? '',
+                'EmailAddress' => $this->getCard()->getEmail(),
             ],
             'Order' => [
                 'OrderID' => $this->getTransactionId(),
+                'GroupID' => '',
             ],
             'Transaction' => [
                 'Type' => TransactionTypes::REFUND,
                 'Amount' => $this->getAmountInteger(),
                 'CurrencyCode' => $this->getCurrencyNumeric(),
+                // Docs sample: CardholderPresentCode=0 for the refund itself;
+                // MotoInd=N for e-commerce (the field spec allows Y/N).
+                'CardholderPresentCode' => '0',
+                'MotoInd' => 'N',
             ],
         ];
     }
@@ -62,7 +68,7 @@ class RefundRequest extends AbstractRequest
     {
         $hashPasswordData = [
             $this->getRefundUserPassword(),
-            str_pad((int) $this->getTerminalId(), 9, 0, STR_PAD_LEFT),
+            str_pad((string) (int) $this->getTerminalId(), 9, '0', STR_PAD_LEFT),
         ];
 
         $hashedPassword = strtoupper(sha1(implode('', $hashPasswordData)));

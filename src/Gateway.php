@@ -7,6 +7,7 @@ use Omnipay\Garantibbva\Constants\Secure3DSecurityLevel;
 use Omnipay\Garantibbva\Message\EnrolmentRequest;
 use Omnipay\Garantibbva\Message\FetchTransactionRequest;
 use Omnipay\Garantibbva\Message\RefundRequest;
+use Omnipay\Garantibbva\Message\VoidRequest;
 use Omnipay\Garantibbva\Traits\PurchaseGettersSetters;
 
 /**
@@ -51,5 +52,10 @@ class Gateway extends AbstractGateway
     public function refund(array $parameters = [])
     {
         return $this->createRequest(RefundRequest::class, $parameters);
+    }
+
+    public function void(array $parameters = [])
+    {
+        return $this->createRequest(VoidRequest::class, $parameters);
     }
 }

@@ -1,0 +1,47 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/xml; charset=UTF-8
+Content-Length: 990
+
+<?xml version="1.0" encoding="UTF-8"?>
+<GVPSResponse>
+    <Mode>TEST</Mode>
+    <Terminal>
+        <ProvUserID>PROVRFN</ProvUserID>
+        <UserID>PROVAUT</UserID>
+        <ID>30691297</ID>
+        <MerchantID>7000679</MerchantID>
+    </Terminal>
+    <Customer>
+        <IPAddress>192.168.0.1</IPAddress>
+        <EmailAddress>eticaret@garanti.com.tr</EmailAddress>
+    </Customer>
+    <Order>
+        <OrderID>981fb46e0d464dab9de9f392f090a892</OrderID>
+        <GroupID></GroupID>
+    </Order>
+    <Transaction>
+        <Response>
+            <Source>HOST</Source>
+            <Code>00</Code>
+            <ReasonCode>00</ReasonCode>
+            <Message>Approved</Message>
+            <ErrorMsg></ErrorMsg>
+            <SysErrMsg></SysErrMsg>
+        </Response>
+        <RetrefNum>210707283287</RetrefNum>
+        <AuthCode>224387</AuthCode>
+        <BatchNum>004568</BatchNum>
+        <SequenceNum>005552</SequenceNum>
+        <ProvDate>20220417 14:50:12</ProvDate>
+        <CardNumberMasked>540669****1173</CardNumberMasked>
+        <CardHolderName>4517*** 4517****</CardHolderName>
+        <CardType>BONUS</CardType>
+        <HashData>019749C176C4F40131A2AC67859676D7E327256676C7D5E09DEF353B9A725B65F2EE30CA4DC805098D5CB0D553FEAFF766A20FFF23F3253E74DD9585D7411CCC</HashData>
+        <HostMsgList></HostMsgList>
+        <RewardInqResult>
+            <RewardList></RewardList>
+            <ChequeList></ChequeList>
+        </RewardInqResult>
+    </Transaction>
+</GVPSResponse>

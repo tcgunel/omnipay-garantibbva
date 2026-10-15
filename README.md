@@ -3,7 +3,7 @@
 [![PHP Composer](https://github.com/tcgunel/omnipay-garantibbva/actions/workflows/tests.yml/badge.svg)](https://github.com/tcgunel/omnipay-garantibbva/actions/workflows/tests.yml)
 
 # Omnipay Garantibbva Gateway
-Omnipay gateway for Garantibbva. Only 3d enrollment and sale methods are available.
+Omnipay gateway for Garantibbva. 3d enrollment (sale), order inquiry, refund (İade) and cancel (İptal) methods are available.
 
 ## Requirements
 | PHP       | Package |
@@ -24,7 +24,9 @@ Please see the [Wiki](https://github.com/tcgunel/omnipay-garantibbva/wiki) page 
 #### Payment Services
 
 * enrollment($options)
-* purchase($options)
+* fetchTransaction($options)
+* refund($options)
+* void($options)
 
 ## Tests
 ```

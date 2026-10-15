@@ -32,6 +32,15 @@ class FetchTransactionResponse extends AbstractResponse
         return $this->response->Order?->OrderInqResult?->Code === '00' && $this->response->Order?->OrderInqResult?->Status === 'APPROVED';
     }
 
+    /**
+     * The RetrefNum the bank assigned to the sale — the reference a same-day
+     * İptal (void) must send back as OriginalRetrefNum.
+     */
+    public function getTransactionId(): ?string
+    {
+        return $this->response->Transaction?->RetrefNum ?? null;
+    }
+
     public function getMessage(): string
     {
         return implode('', [

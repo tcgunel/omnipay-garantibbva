@@ -121,6 +121,10 @@ class FetchTransactionTest extends TestCase
         $this->assertEquals('304919', $data->Transaction->AuthCode);
         $this->assertEquals('411111******1111', $data->Transaction->CardNumberMasked);
 
+        // The RetrefNum is exposed as the transaction id — the reference a
+        // same-day İptal (void) sends back as OriginalRetrefNum.
+        $this->assertEquals('335709614892', $response->getTransactionId());
+
         // getMessage should be empty on success
         $this->assertEquals('', $response->getMessage());
     }

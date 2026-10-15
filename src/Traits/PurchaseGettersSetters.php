@@ -167,4 +167,14 @@ trait PurchaseGettersSetters
     {
         return $this->setParameter('refund_user_password', $value);
     }
+
+    public function getOriginalRetrefNum()
+    {
+        return $this->getParameter('original_retref_num');
+    }
+
+    public function setOriginalRetrefNum($value)
+    {
+        return $this->setParameter('original_retref_num', $value);
+    }
 }

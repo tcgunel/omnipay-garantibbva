@@ -1,0 +1,14 @@
+{
+  "terminal_user_id": "PROVAUT",
+  "terminal_merchant_id": "7000679",
+  "terminal_id": "30691297",
+  "refund_user_password": "123qweASD/",
+  "amount": "100.00",
+  "currency": "TRY",
+  "transactionId": "981fb46e0d464dab9de9f392f090a892",
+  "testMode": true,
+  "client_ip": "192.168.0.1",
+  "card": {
+    "email": "eticaret@garanti.com.tr"
+  }
+}
