@@ -6,9 +6,11 @@
 Omnipay gateway for Garantibbva. 3d enrollment (sale), order inquiry, refund (İade) and cancel (İptal) methods are available.
 
 ## Requirements
-| PHP       | Package |
-|-----------|---------|
-| ^7.3-^8.0 | v1.0.0  |
+| PHP       | Package        |
+|-----------|----------------|
+| ^7.3-^8.0 | v1.0.0         |
+| ^7.4-^8.0 | v1.0.4–v2.0.0  |
+| ^8.3      | v3.0.0+        |
 
 ## Installment
 
